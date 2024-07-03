@@ -1,7 +1,5 @@
 # hng-devops-stage1
 
-# User Management Script
-
 ## Overview
 
 `create_users.sh` is a Bash script designed to automate the process of creating users and groups on a Linux system. The script reads a text file containing usernames and group names, creates users and their associated groups, sets up home directories with appropriate permissions, generates random passwords for the users, and logs all actions. Generated passwords are securely stored.
