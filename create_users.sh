@@ -5,6 +5,7 @@ LOG_FILE="/var/log/user_management.log"
 PASSWORD_FILE="/var/secure/user_passwords.txt"
 
 # Ensure log and password files exist
+sudo mkdir -p /var/secure
 sudo touch $LOG_FILE
 sudo touch $PASSWORD_FILE
 
