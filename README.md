@@ -1,32 +1,38 @@
-# hng-devops-stage1
+# User Management Script
 
-## Overview
-
-`create_users.sh` is a Bash script designed to automate the process of creating users and groups on a Linux system. The script reads a text file containing usernames and group names, creates users and their associated groups, sets up home directories with appropriate permissions, generates random passwords for the users, and logs all actions. Generated passwords are securely stored.
+This script automates the process of creating users and managing their groups on a Unix-based system. It reads user and group information from an input file, creates users if they don't exist, adds them to existing or new groups, sets passwords, manages permissions, and securely stores passwords.
 
 ## Features
 
-- Creates users and their personal groups.
-- Assigns additional groups to users as specified.
-- Sets up home directories with appropriate permissions and ownership.
-- Generates random passwords for users and securely stores them.
-- Logs all actions to `/var/log/user_management.log`.
+- **User Creation**: Checks if a user exists; if not, creates the user.
+- **Group Management**: Checks if groups exist; if not, creates them.
+- **Password Management**: Generates random passwords and securely stores them.
+- **Permissions**: Sets appropriate permissions for user home directories.
+- **Logging**: Logs all actions and outcomes to a specified log file (`/var/log/user_management.log`).
 
-## Requirements
+## Prerequisites
 
-- Bash
-- OpenSSL (for generating random passwords)
-- Root privileges to create users and groups, and modify system files
+- Unix-like environment (tested on Linux).
+- `sudo` privileges to execute administrative commands (`useradd`, `groupadd`, etc.).
+- Input file containing user and group information.
 
 ## Usage
 
-### 1. Script Setup
+1. **Clone the Repository**:
 
-Ensure the script is executable:
-```sh
-chmod +x create_users.sh
-```
-
-### 2. Execute
-```sh
-sudo ./create_users.sh user_file.txt
+   ```bash
+   git clone https:github.com/KizitoNaanma/hng-devops-stage1.git
+   cd hng-devops-stage1
+   
+2. **Prepare txt file**: (`users.txt`)
+   ``` text
+    light; sudo,dev,www-data
+    idimma; sudo
+    mayowa; dev,www-data
+   
+3. **Execute**:
+   ```bash
+   bash create_user.sh users.txt
+   ```
+   
+  
